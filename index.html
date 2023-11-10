@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Easy Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo pd.png" class="logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>            
+        </nav>
+        <div class="header-text">
+            <p>UI/UX Designer, Programmer/Coder</p>
+            <h1>Hi, I'm <span>Derrick</span><br></h1>
+            <br>
+            <p>Welcome to my portfolio</p>
+        </div>
+    </div>
+</div>
+
+<!-- -----------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/derrick.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hello, I am Derrick, a year 2 student currently studying in Republic Polytechnic pursuing a course in Diploma in Digital Design and Development(DDDD).
+                   Throughout this two years, I have acquired a certain amount of knowledge and skills during my time in studying and I aspire to be a UI/UX designer in future.
+                   In my own free time, I am a gamer and sometimes playing badminton with family.
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Adobe XD, Photoshop & Illustrator</li>
+                        <li><span>Web Development</span><br>PHP,CSS,HTML,Java,Bootstrap</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022-2025</span><br>Currently studying in Republic Polytechnic</li>
+                        <li><span>2016-2021</span><br>Studied in Ang Mo Kio Secondary School (O & N level)</li>
+                        <li><span>2009-2015</span><br>Studied in Ang Mo Kio Primary School.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------portfolio------------ -->
+<div id="portfolio">
+    <div class="container"></div>
+    <h1 class="sub-title">Portfolio</h1>
+    <div class="work-list">
+        <div class="work">
+            <img src="images/movie.jpg">
+            <div class="layer">
+                <h3>Movie Website</h3>
+                <p>One of the work I did for a movie website where it allows user to register, login, view movie details, 
+                    add, update and delete their reviews on the movie</p>
+                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+
+        <div class="work">
+            <img src="images/C206 GA.jpg">
+            <div class="layer">
+                <h3>Renovation Portal</h3>
+                <p>This was created using eclipse where we have to create a Renovation Portal using Java and JUnit to test whether each of our
+                    individual method in normal, boundary and error condition as a team to see if we pass the test.
+                    If all the method passed, means that our method is working and the Renovation Portal can be used</p>
+                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="work">
+            <img src="images/xd.jpg">
+            <div class="layer">
+                <h3>Online Shop UI/UX</h3>
+                <p>This prototype was created from Adobe XD where I created a high-fidelity for a online toy shop Called Little Toy Kingdom .</p>
+                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn">See more</a>
+</div>
+</div>
+
+<!-- ----------contact------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-envelope"></i> derrick.ngjw0707@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +65 8778 8973</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i>></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Derrick Ng</p>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+
+</body>
+</html>
