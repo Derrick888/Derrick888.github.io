@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio Website - Easy Tutorials</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/234e0aec8d.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="header">
     <div class="container">
         <nav>
             <img src="images/logo pd.png" class="logo">
-            <ul>
+            <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
-                
-            </ul>            
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>         
+            <i class="fas fa-bars" onclick="openmenu()"></i>   
         </nav>
         <div class="header-text">
             <p>UI/UX Designer, Programmer/Coder</p>
@@ -67,42 +69,284 @@
 </div>
 <!-- ----------portfolio------------ -->
 <div id="portfolio">
-    <div class="container"></div>
-    <h1 class="sub-title">Portfolio</h1>
-    <div class="work-list">
-        <div class="work">
-            <img src="images/movie.jpg">
-            <div class="layer">
-                <h3>Movie Website</h3>
-                <p>One of the work I did for a movie website where it allows user to register, login, view movie details, 
-                    add, update and delete their reviews on the movie</p>
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-            </div>
+    <div class="container">
+        <h1 class="sub-title">Portfolio</h1>
+        <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('all')">All</p>
+            <p class="tab-links" onclick="opentab('code')">Coding</p>
+            <p class="tab-links" onclick="opentab('design')">Design</p>
         </div>
+        <div class="tab-contents active-tab" id="all">
+            <div class="work-list">
+                <!-- Include your existing web project content here -->
+                <div class="work">
+                    <img src="images/movie.jpg">
+                    <div class="layer">
+                        <h3>Movie Website</h3>
+                        <a href="#" class="show-more" data-target="movie-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="movie-desc" style="display: none;">Developed a website where users, when logged in, are able to review and rate the movies they have watched, serving as a platform for people to decide for themselves if they want to watch the movie. HTML, CSS, Bootstrap, PHP, and SQL were implemented for this website. The website is also responsive, allowing users to view it on multiple devices.</p>
+                    </div>
+                </div>
+                <!-- Include other projects as needed -->
+                <div class="work">
+                    <img src="images/C206 GA.jpg">
+                    <div class="layer">
+                        <h3>Renovation Portal</h3>
+                        <a href="#" class="show-more" data-target="portal-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="portal-desc" style="display: none;">This was created using eclipse where we have to create a Renovation Portal using Java and JUnit to test whether each of our
+                            individual method in normal, boundary and error condition as a team to see if we pass the test.
+                            If all the method passed, means that our method is working and the Renovation Portal can be used</p>
+                    </div>
+                </div>
 
+                <div class="work">
+                    <img src="images/C203.jpg">
+                    <div class="layer">
+                        <h3>SuperMarket Webite</h3>
+                        <a href="#" class="show-more" data-target="supermarket-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="supermarket-desc" style="display: none;">Developed a website where users are able to see what new items or deal are there in the home page and are able to view the product and the details.
+                            Html, css, bootstrap and php. The website is also responsive.</p>
+                    </div>
+                </div>
 
-        <div class="work">
-            <img src="images/C206 GA.jpg">
-            <div class="layer">
-                <h3>Renovation Portal</h3>
-                <p>This was created using eclipse where we have to create a Renovation Portal using Java and JUnit to test whether each of our
-                    individual method in normal, boundary and error condition as a team to see if we pass the test.
-                    If all the method passed, means that our method is working and the Renovation Portal can be used</p>
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-            </div>
-        </div>
+                <div class="work">
+                    <img src="images/c219.jpg">
+                    <div class="layer">
+                        <h3>SOI Portal</h3>
+                        <a href="#" class="show-more" data-target="SOI-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="SOI-desc" style="display: none;">Developed a website where users are able to set the profile online, search for course, have the notifications on, bookmark the course they want.
+                            Html, css, bootstrap and javascript is used. The website is also responsive allowing users to view the website on multiple devices.</p>
+                    </div>
+                </div>
 
-        <div class="work">
-            <img src="images/xd.jpg">
-            <div class="layer">
-                <h3>Online Shop UI/UX</h3>
-                <p>This prototype was created from Adobe XD where I created a high-fidelity for a online toy shop Called Little Toy Kingdom .</p>
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                <div class="work">
+                    <img src="images/C219(1).jpg">
+                    <div class="layer">
+                        <h3>World Xplore Website</h3>
+                        <a href="#" class="show-more" data-target="world-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="world-desc" style="display: none;">Developed a website where users are able to see a background video of the country that is recommended and the 3 different iterniary that is recommended.
+                            They can even see the different cruises that are aviliable.
+                            Html, css, bootstrap and javascript is used. The website is also responsive .</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/android.jpg">
+                    <div class="layer">
+                        <h3>Bill Calculator App</h3>
+                        <a href="#" class="show-more" data-target="bill-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="bill-desc" style="display: none;">Developed a app where users are able to key in the number of people they have, the amount needed to pay, how much discount did they get and the mode of payment.
+                            The app will then calculate for them thier total bill and how much each person needs to pay.
+                            Used Android programming language(java). The app is working .</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/xd.jpg">
+                    <div class="layer">
+                        <h3>Toy Kingdom prototype</h3>
+                        <a href="#" class="show-more" data-target="kingdom-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="kingdom-desc" style="display: none;">Developed a high-fidelity wireframe prototype for a Toy Kingdom website where developers get to know an rough idea of how the website is going to work when they are developing it.
+                            Adobe XD is used. The prototype is responsive .</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design.jpg">
+                    <div class="layer">
+                        <h3>Rise Haven prototype</h3>
+                        <a href="#" class="show-more" data-target="haven-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="haven-desc" style="display: none;">Developed a high-fidelity wireframe prototype for a dessert website where developers get to know an rough idea of how the website is going to work when they are developing it.
+                            Adobe XD is used. The prototype is responsive .</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design(1).jpg">
+                    <div class="layer">
+                        <h3>TravelXcel prototype</h3>
+                        <a href="#" class="show-more" data-target="travel-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="travel-desc" style="display: none;">Developed a high-fidelity wireframe prototype with my team for a booking of flight app where developers get to know an rough idea of how the website is going to work when they are developing it.
+                            Adobe XD is used. The prototype is responsive .</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design(2).jpg">
+                    <div class="layer">
+                        <h3>Artfest Advertisement Poster</h3>
+                        <a href="#" class="show-more" data-target="artfest-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="artfest-desc" style="display: none;">Developed an  Advertisement Poster for artfest where details of who is the artist is, the date and time, the place where it is held and who is the organizing partners
+                            Adobe Photoshop is used.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design(3).jpg">
+                    <div class="layer">
+                        <h3>Okinawa Vacation Magazine</h3>
+                        <a href="#" class="show-more" data-target="vacation-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="vacation-desc" style="display: none;">Developed an  magizine for vacation to Okinawa where it talked about the history of Okinawa, the foods in Okinawa, the place to visit, the famous Okinawa Castle and Okinawa famous cherry blossom.
+                            Adobe Illustrator is used.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design(4).jpg">
+                    <div class="layer">
+                        <h3>Mobile Portfolio Prototype</h3>
+                        <a href="#" class="show-more" data-target="mobile-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="mobile-desc" style="display: none;">Developed a high-fidelity wireframe prototype for my graded assignments where it has an about me, portfolio and contact me page 
+                            Adobe XD is used. All page is working</p>
+                    </div>
+                </div>
+
+                
+
+                
+
+                
             </div>
         </div>
     </div>
-    <a href="#" class="btn">See more</a>
-</div>
+
+        <div class="tab-contents" id="code">
+            <!-- Java Projects Content -->
+            <div class="work-list">
+                <!-- Include your existing Java project content here -->
+                <div class="work">
+                    <img src="images/movie.jpg">
+                    <div class="layer">
+                        <h3>Movie Website</h3>
+                        <a href="#" class="show-more" data-target="moviewebsite-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="moviewebsite-desc" style="display: none;">Developed a website where users, when logged in, are able to review and rate the movies they have watched, serving as a platform for people to decide for themselves if they want to watch the movie. HTML, CSS, Bootstrap, PHP, and SQL were implemented for this website. The website is also responsive, allowing users to view it on multiple devices.</p>
+                    </div>
+                </div>
+                <!-- Include other projects as needed -->
+                <div class="work">
+                    <img src="images/C206 GA.jpg">
+                    <div class="layer">
+                        <h3>Renovation Portal</h3>
+                        <a href="#" class="show-more" data-target="renovationportal-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="renovationportal-desc" style="display: none;">This was created using eclipse where we have to create a Renovation Portal using Java and JUnit to test whether each of our
+                            individual method in normal, boundary and error condition as a team to see if we pass the test.
+                            If all the method passed, means that our method is working and the Renovation Portal can be used</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/C203.jpg">
+                    <div class="layer">
+                        <h3>SuperMarket Webite</h3>
+                        <a href="#" class="show-more" data-target="supermarketwebsite-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="supermarketwebsite-desc" style="display: none;">Developed a website where users are able to see what new items or deal are there in the home page and are able to view the product and the details.
+                            Html, css, bootstrap and php. The website is also responsive.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/c219.jpg">
+                    <div class="layer">
+                        <h3>SOI Portal</h3>
+                        <a href="#" class="show-more" data-target="SOIportal-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="SOIportal-desc" style="display: none;">Developed a website where users are able to set the profile online, search for course, have the notifications on, bookmark the course they want.
+                            Html, css, bootstrap and javascript is used. The website is also responsive allowing users to view the website on multiple devices.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/C219(1).jpg">
+                    <div class="layer">
+                        <h3>World Xplore Website</h3>
+                        <a href="#" class="show-more" data-target="worldxplore-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="worldxplore-desc" style="display: none;">Developed a website where users are able to see a background video of the country that is recommended and the 3 different iterniary that is recommended.
+                            They can even see the different cruises that are aviliable.
+                            Html, css, bootstrap and javascript is used. The website is also responsive .</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/android.jpg">
+                    <div class="layer">
+                        <h3>Bill Calculator App</h3>
+                        <a href="#" class="show-more" data-target="billapp-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="billapp-desc" style="display: none;">Developed a app where users are able to key in the number of people they have, the amount needed to pay, how much discount did they get and the mode of payment.
+                            The app will then calculate for them thier total bill and how much each person needs to pay.
+                            Used Android programming language(java). The app is working .</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="tab-contents" id="design">
+            <!-- UI/UX Designs Content -->
+            <!-- Include your existing UI/UX design content here -->
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/xd.jpg">
+                    <div class="layer">
+                        <h3>Toy Kingdom prototype</h3>
+                        <a href="#" class="show-more" data-target="toykingdom-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="toykingdom-desc" style="display: none;">Developed a high-fidelity wireframe prototype for a Toy Kingdom website where developers get to know an rough idea of how the website is going to work when they are developing it.
+                            Adobe XD is used. The prototype is responsive .</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design.jpg">
+                    <div class="layer">
+                        <h3>Rise Haven prototype</h3>
+                        <a href="#" class="show-more" data-target="tastehaven-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="tastehaven-desc" style="display: none;">Developed a high-fidelity wireframe prototype for a dessert website where developers get to know an rough idea of how the website is going to work when they are developing it.
+                            Adobe XD is used. The prototype is responsive .</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design(1).jpg">
+                    <div class="layer">
+                        <h3>TravelXcel prototype</h3>
+                        <a href="#" class="show-more" data-target="travelp-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="travelp-desc" style="display: none;">Developed a high-fidelity wireframe prototype with my team for a booking of flight app where developers get to know an rough idea of how the website is going to work when they are developing it.
+                            Adobe XD is used. The prototype is responsive .</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design(2).jpg">
+                    <div class="layer">
+                        <h3>Artfest Advertisement Poster</h3>
+                        <a href="#" class="show-more" data-target="artfestad-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="artfestad-desc" style="display: none;">Developed an  Advertisement Poster for artfest where details of who is the artist is, the date and time, the place where it is held and who is the organizing partners
+                            Adobe Photoshop is used.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design(3).jpg">
+                    <div class="layer">
+                        <h3>Okinawa Vacation Magazine</h3>
+                        <a href="#" class="show-more" data-target="vacationmagazine-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="vacationmagazine-desc" style="display: none;">Developed an  magizine for vacation to Okinawa where it talked about the history of Okinawa, the foods in Okinawa, the place to visit, the famous Okinawa Castle and Okinawa famous cherry blossom.
+                            Adobe Illustrator is used.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/design(4).jpg">
+                    <div class="layer">
+                        <h3>Mobile Portfolio Prototype</h3>
+                        <a href="#" class="show-more" data-target="mobilega-desc"><i class="fas fa-external-link-alt"></i></a>
+                        <p class="work-details" id="mobilega-desc" style="display: none;">Developed a high-fidelity wireframe prototype for my graded assignments where it has an about me, portfolio and contact me page 
+                            Adobe XD is used. All page is working</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a> 
+    </div>
 </div>
 
 <!-- ----------contact------------- -->
@@ -114,17 +358,18 @@
                 <p><i class="fa-regular fa-envelope"></i> derrick.ngjw0707@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i> +65 8778 8973</p>
                 <div class="social-icons">
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-linkedin"></i>></a>
+                    <a href="https://www.instagram.com/derrick.ngjw0707?igsh=amNnNmxtd2lnaG5w"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ng-derrick-83431b23b/"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="contact-right">
-                <form name="">
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </div>
@@ -155,6 +400,69 @@
 
 </script>
 
+<script>
+// Function to toggle visibility of the project description
+function toggleDescription(targetId) {
+    var target = document.getElementById(targetId);
+    if (target.style.display === "none") {
+        target.style.display = "block";
+    } else {
+        target.style.display = "none";
+    }
+}
+
+// Add event listeners to all show-more links within tab contents
+var tabContents = document.querySelectorAll('.tab-contents');
+tabContents.forEach(function(tab) {
+    var showMoreLinks = tab.querySelectorAll('.show-more');
+    showMoreLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var targetId = link.getAttribute('data-target');
+            toggleDescription(targetId);
+        });
+    });
+});
+
+
+    
+    
+    
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbznyTiFfg6IkChqdCeU-vJohl9oZ90gMl6QGydmyS6WMSrM6LnfPx0dPV3M2P3tbT8DtA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+        msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },5000)
+        form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
 
 </body>
 </html>
+
